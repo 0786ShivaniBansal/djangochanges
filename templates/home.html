@@ -1,19 +1,17 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
-<html>
 
-<head>
-<title>Shivani</title>
-</head>
 <form action="add" method='post'>
+
+    {% csrf_token %}
     Enter 1st number:<input type="text" name="num1"><br>
-    Enter 2nd number:<input type="text" name="num2"><br>
+    Enter 2nd number:<input type="text" name="num2"><br><br>
     <input type="submit">
 </form>
 
-<body bgcolor="green">
+
 Sahil Bansal
-</body>
-</html>
 {% endblock %}
+
