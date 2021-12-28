@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls',
     'hello',
-    'forms',
+    'shivani',
 ]
 
 MIDDLEWARE = [
@@ -59,9 +59,7 @@ ROOT_URLCONF = 'mydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates',
-        'templates2',
-        ],
+        'DIRS': ['pages'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
