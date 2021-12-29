@@ -1,22 +1,13 @@
-<!-- {% extends 'demo.html' %}
 {% block content %}
+<form action ="add" method="get">
 
-<form action ='add'method='POST'>
-    {% csrf token %}
 
-    Enter Integer1:<input type="text"name="a1"><br>
-    Enter Integer2:<input type="text"name="a2"><br>
-    <input type="SUBMIT"
+    {% csrf_token %}
+    Enter Ist number:<input type = "text" name="integer1"><br>
+    Enter 2nd number:<input type = "text" name="integer2"><br><br>
+    <input type = "submit">
+    </form>
 
-</form>
+
 {% endblock %}
-
-
- -->
-
-
-
-
-
-
 
