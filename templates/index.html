@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <!--
 	Resto by GetTemplates.co
@@ -79,7 +80,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav d-flex justify-content-between">
                 <li class="nav-item only-desktop">
-                    <a class="nav-link" id="side-nav-open" href="#">
+                    <a class="nav-link" id="side-nav-open" href={% static "#" %}>
                         <span class="lnr lnr-menu"></span>
                     </a>
                 </li>
@@ -96,8 +97,8 @@
                           Special Dishes
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href={% static 'special-dishes.html' %}>Beef Steak Sauce</a>
-                          <a class="dropdown-item" href={% static 'special-dishes.html' %}>Salmon Zucchini</a>
+                          <a class="dropdown-item" href={% static 'special-dishes.html' %}>Pav Bhaji</a>
+                          <a class="dropdown-item" href={% static 'special-dishes.html' %}>Pasta</a>
                         </div>
                     </li>
                 </div>
@@ -165,7 +166,7 @@
 	    <div class="col-lg-6 hero-right">
 	    	<div class="owl-carousel owl-theme hero-carousel">
 			    <div class="item">
-			    	<img class="img-fluid" src={% static 'img/hero-1.jpg' alt="" %}>
+			    	<img class="img-fluid" src={% static 'img/shivani.JPG' alt="" %}>
 			    </div>
 			    <div class="item">
 			    	<img class="img-fluid" src={% static 'img/hero-2.jpg' alt="" %}>
@@ -191,7 +192,7 @@
                             About
                         </span>
                         <h2>
-                            Welcome to Resto
+                            Welcome To ShivaniRestaurent
                         </h2>
                     </div>
                     <div class="pl-lg-5 ml-md-5">
@@ -199,21 +200,21 @@
                         <h3 class="mt-5">Special Recipe</h3>
                         <div class="row">
                             <div class="col-4">
-                                <a href="#" class="thumb-menu">
-                                    <img class="img-fluid img-cover" src={% static 'img/hero-1.jpg' / %}>
-                                    <h6>Australian Organic Beef</h6>
+                                <a href={% static '#'' class="thumb-menu" %}>
+                                    <img class= "img-fluid img-cover"  src={% static 'img/hero-1.jpg' / %}>
+                                    <h6>EGG</h6>
                                 </a>
                             </div>
                             <div class="col-4">
-                                <a href="#" class="thumb-menu">
+                                <a href={% static '#' class="thumb-menu" %}>
                                     <img class="img-fluid img-cover" src={% static 'img/hero-1.jpg' /%}>
-                                    <h6>Australian Organic Beef</h6>
+                                    <h6>EGG</h6>
                                 </a>
                             </div>
                             <div class="col-4">
-                                <a href="#" class="thumb-menu">
+                                <a href={% static '#' class="thumb-menu" %}>
                                     <img class="img-fluid img-cover" src={% static 'img/hero-1.jpg' /%}>
-                                    <h6>Australian Organic Beef</h6>
+                                    <h6>EGG</h6>
                                 </a>
                             </div>
                         </div>
@@ -224,6 +225,7 @@
     </div>
 </section>
 <!-- End of Welcome Section -->		<!-- Special Dishes Section -->
+{% for rest in rests %}
 <section id="gtco-special-dishes" class="bg-grey section-padding">
     <div class="container">
         <div class="section-content">
@@ -235,36 +237,24 @@
                     Special Dishes
                 </h2>
             </div>
+            
             <div class="row mt-5">
                 <div class="col-lg-5 col-md-6 align-self-center py-5">
                     <h2 class="special-number">01.</h2>
                     <div class="dishes-text">
-                        <h3><span>Beef</span><br> Steak Sauce</h3>
-                        <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ea vero alias perferendis quas animi doloribus voluptates. Atque explicabo ea nesciunt provident libero qui eum, corporis esse quos excepturi soluta?</p>
-                        <h3 class="special-dishes-price">${{price}}</h3>
-                        <a href={% static '#' %} class="btn-primary mt-3">book a table</a>
+                        <h3><span>PavBhaji</span><br>{{rest.name}}</h3>
+                        <p class="pt-3">{{rest.descr}}</p><h3 class="special-dishes-price">${{rest.price}}</h3>
+                        <a href={% static '#' %} class="btn-primary mt-3">Book A Table</a>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                    <img src={% static 'img/steak.jpg' alt="" class="img-fluid shadow w-100" %}>
+                    <img src= {% static 'img/pav.jpg.jpg' alt=""class="img-fluid shadow w-100" %}>
+                {% if rest.offer %}
+                <div class="spec_offer text-center"<a href="#">Special Offer</a></div>
+                {% endif %}
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
-                    <img src={% static 'img/salmon-zucchini.jpg' alt="" class="img-fluid shadow w-100" %}>
-                </div>
-                <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
-                    <h2 class="special-number">02.</h2>
-                    <div class="dishes-text">
-                        <h3><span>Salmon</span><br> Zucchini</h3>
-                        <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, accusamus culpa quam amet ipsam odit ea doloremque accusantium quo, itaque possimus eius. In a quis quibusdam omnis atque vero dolores!</p>
-                        <h3 class="special-dishes-price">$12.00</h3>
-                        <a href={% static '#' %} class="btn-primary mt-3">book a table <span><i class="fa fa-long-arrow-right"></i></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        {% endfor %}
 </section>
 <!-- End of Special Dishes Section -->		<!-- Menu Section -->
 <section id="gtco-menu" class="section-padding">
@@ -496,9 +486,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="team-card mb-5">
-                        <img class="img-fluid" src={% static 'img/chef-1.jpg' alt="" %}>
+                        <img class="img-fluid" src={% static 'img/Shivani.JPG' alt="" %}>
                         <div class="team-desc">
-                            <h4 class="mb-0">Aaron Patel</h4>
+                            <h4 class="mb-0">Shivani Bansal</h4>
                             <p class="mb-1">CEO</p>
                             <ul class="list-inline mb-0 team-social-links">
                                 <li class="list-inline-item">
@@ -671,13 +661,13 @@
          			<img src={% static 'img/logo.png' class="img-fluid footer-logo mb-3" alt="" %}>
 	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni, et voluptatum dolorem.</p>
 	         		<nav class="nav nav-mastfoot justify-content-start">
-		                <a class="nav-link" href="#">
+		                <a class="nav-link" href={% static '#' %}>
 		                	<i class="fab fa-facebook-f"></i>
 		                </a>
-		                <a class="nav-link" href="#">
+		                <a class="nav-link" href={% static '#' %}>
 		                	<i class="fab fa-twitter"></i>
 		                </a>
-		                <a class="nav-link" href="#">
+		                <a class="nav-link" href={% static '#' %}>
 		                	<i class="fab fa-instagram"></i>
 		                </a>
 		            </nav>
