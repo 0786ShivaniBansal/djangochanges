@@ -1,8 +1,10 @@
+from os import name
 from django.urls import path
 from .import views
 urlpatterns = [
-    path('',views.index,name='index'),
-    path('',views.reservation,name='reservation')
-    
+    path('',views.resto, name='resto'),
+    path('index',views.index, name='index'),
 
 ]
+
+app_name='polls'
