@@ -18,12 +18,12 @@ class Fruits(models.Model):
     color=models.CharField(max_length=100,null=True,blank=True)
     price=models.IntegerField(null=True,blank=True)
     
-class user(models.Model):
+class User(models.Model):
     username=models.CharField(max_length=100,null=True,blank=True)
-    id=models.IntegerField(primary_key=True,null=False,blank=True)
+    id=models.BigAutoField(primary_key=True)
     Mobile=models.IntegerField(null=True,blank=True)
     Email=models.EmailField(null=True,blank=True)
-    password=models.TextField(null=True,blank=True)
-    Admin=models.CharField(max_length=10,null=True,blank=True)
-    Chef=models.CharField(max_length=20,null=True,blank=True)
-    Waiter=models.CharField(max_length=20,null=True,blank=True)
+    Password=models.TextField(null=True,blank=True)
+    Admin=models.CharField(max_length=100,null=True,blank=True)
+    Chef=models.CharField(max_length=100,null=True,blank=True)
+    Waiter=models.CharField(max_length=100,null=True,blank=True)

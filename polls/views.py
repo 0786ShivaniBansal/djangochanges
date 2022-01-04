@@ -1,7 +1,7 @@
 from os import name
 from django.shortcuts import render
 from django.urls.conf import path
-from .models import Restaurent, Fruits
+from .models import Restaurent, Fruits, User
 
 # Create your views here.
 def index(request):
@@ -42,8 +42,9 @@ def fruits(request):
 
 
 def user(request):
-    if (request.method=='POST'):
+    if(request.method=='POST'):
         print(request.POST)
-        u=user.objects.create(username=request.POST['username'],id=request.POST['id'],Mobile=request.POST['Mobile'],Email=request.POST['Email'],Password=request.POST['Password'],Admin=request.POST['Admin'])
+        print(request.POST['username'])
+        u=User.objects.create(username = request.POST['username'],id = request.POST['id'],Mobile = request.POST['Mobile'],Email = request.POST['Email'],Password = request.POST['Password'],Admin = request.POST['Admin'],Chef = request.POST['Chef'],Waiter = request.POST['Waiter'])
     
     return render(request,('polls/user.html'))
