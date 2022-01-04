@@ -45,6 +45,6 @@ def user(request):
     if(request.method=='POST'):
         print(request.POST)
         print(request.POST['username'])
-        u=User.objects.create(username = request.POST['username'],id = request.POST['id'],Mobile = request.POST['Mobile'],Email = request.POST['Email'],Password = request.POST['Password'],Admin = request.POST['Admin'],Chef = request.POST['Chef'],Waiter = request.POST['Waiter'])
+        u=User.objects.create(username=request.POST['username'],id=request.POST['id'],Mobile=request.POST['Mobile'],Email=request.POST['Email'],Password=request.POST['Password'],Admin=request.POST['Admin'],Chef=request.POST['Chef'],Waiter=request.POST['Waiter'])
     
     return render(request,('polls/user.html'))

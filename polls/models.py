@@ -21,7 +21,7 @@ class Fruits(models.Model):
 class User(models.Model):
     username=models.CharField(max_length=100,null=True,blank=True)
     id=models.BigAutoField(primary_key=True)
-    Mobile=models.IntegerField(null=True,blank=True)
+    Mobile=models.BigIntegerField(null=True,blank=True)
     Email=models.EmailField(null=True,blank=True)
     Password=models.TextField(null=True,blank=True)
     Admin=models.CharField(max_length=100,null=True,blank=True)
