@@ -1,6 +1,7 @@
 from os import name
 from django.shortcuts import render
-from .models import Restaurent
+from django.urls.conf import path
+from .models import Restaurent, Fruits
 
 # Create your views here.
 def index(request):
@@ -33,3 +34,16 @@ def resto(request):
 
     return render(request,'polls/resto.html')
 
+def fruits(request):
+    if(request.method=='POST'):
+        print(request.POST)
+        f=Fruits.objects.create(name=request.POST['name'],color=request.POST['color'],price=request.POST['price'])
+    return render(request,('polls/fruits.html'))
+
+
+def user(request):
+    if (request.method=='POST'):
+        print(request.POST)
+        u=user.objects.create(username=request.POST['username'],id=request.POST['id'],Mobile=request.POST['Mobile'],Email=request.POST['Email'],Password=request.POST['Password'],Admin=request.POST['Admin'])
+    
+    return render(request,('polls/user.html'))
