@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from django.db.models.base import Model
 
 from django.urls.conf import path
 import os
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'polls',
     'hello',
     'shivani',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[ BASE_DIR / 'static',]
 
 STATIC_ROOT= BASE_DIR / 'assets'
+MEDIA_URL='/media/'
+MEDIA_ROOT=BASE_DIR/'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

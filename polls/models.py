@@ -1,7 +1,7 @@
 from os import name
 from typing import Optional
 from django.db import models
-from django.db.models.fields import CharField, TextField
+from django.db.models.fields import CharField, TextField,EmailField,IntegerField,BigAutoField,BigIntegerField
 
 # Create your models here.
 class Restaurent(models.Model):
@@ -27,3 +27,9 @@ class User(models.Model):
     Admin=models.CharField(max_length=100,null=True,blank=True)
     Chef=models.CharField(max_length=100,null=True,blank=True)
     Waiter=models.CharField(max_length=100,null=True,blank=True)
+
+
+class Login(models.Model):
+    username=models.CharField(max_length=100,null=True,blank=True)
+    password=models.TextField(null=True,blank=True)
+    id=models.BigAutoField(primary_key=True)

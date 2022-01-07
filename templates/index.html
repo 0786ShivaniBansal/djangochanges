@@ -110,14 +110,12 @@
             <ul class="navbar-nav d-flex justify-content-between">
                 <div class="d-flex flex-lg-row flex-column">
                     <li class="nav-item active">
-                        <a class="nav-link" href={% static 'menu.html' %}>Menu</a>
+                        <a class="nav-link" href= 'accounts/register'>register</a>
+                        <img src= "{{reg5.img.url}}"alt="">
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={% static 'team.html' %}>Team</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href={% static 'reservation.html' %}>Reservation</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href= 'accounts/login'>login</a>
+                        
                     </li>
                 </div>
                 <li class="nav-item">
@@ -248,7 +246,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                    <img src= {% static 'img/pav.jpg.jpg' alt=""class="img-fluid shadow w-100" %}>
+                    <img src= "{{rest.img.url}}"alt="">
                 {% if rest.offer %}
                 <div class="spec_offer text-center"<a href="#">Special Offer</a></div>
                 {% endif %}
