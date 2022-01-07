@@ -32,4 +32,3 @@ class User(models.Model):
 class Login(models.Model):
     username=models.CharField(max_length=100,null=True,blank=True)
     password=models.TextField(null=True,blank=True)
-    id=models.BigAutoField(primary_key=True)

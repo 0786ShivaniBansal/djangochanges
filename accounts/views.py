@@ -9,7 +9,7 @@ def register(request):
     if(request.method=='POST'):
         print(request.POST)
         r=Register.objects.create(firstname=request.POST['firstname'],rid=request.POST['rid'],emailid=request.POST['emailid'],passcode=request.POST['passcode'])
-
+        return redirect('login')
     return render(request,('register.html'))
 
 
@@ -18,6 +18,7 @@ def login(request):
         print(request.POST['username'])
         username=request.POST
         password=request.POST
+
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)

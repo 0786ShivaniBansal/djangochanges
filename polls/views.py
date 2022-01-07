@@ -38,16 +38,3 @@ def user(request):
     
     return render(request,('polls/user.html'))
 
-def login(request):
-    if (request.method=='POST'):
-        print(request.POST['username'])
-        l=Login.objects.create(username=request.POST['username'],password=request.POST['password'])
-        u=auth.authenticate()
-        if login is not None:
-            auth.login(request,id)
-            return redirect('/')
-        else:
-            print("invalid credentials")
-            return redirect('login')
-
-    return render(request,('polls/login.html'))
