@@ -7,21 +7,18 @@
     <title>Register</title>
 </head>
 <body>
+    <h1>Enter Here</h1>
     <form action="register" method="post">
         {% csrf_token %}
-        <label for="firstname"fname</label><br>
-        <input type="text" name="firstname"><br>
-        <label for="rid">rid</label>
-        <input type="text" name="rid"><br>
-        <label for="contact">contact</label>
-        <input type="text" name="Contact"><br>
-        <label for="emailid">emailid</label>
-        <input type="text" name="emailid"><br>
-        <label for="passcode">passcode</label>
-        <input type="text" name="passcode"><br>
+        <input type="text" name="firstname" placeholder="name"><br>
+        <input type="text" name="rid" placeholder="id"><br>
+        <input type="text" name="Contact" placeholder="contact"><br>
+        <input type="text" name="emailid" placeholder="email"><br>
+        <input type="text" name="passcode" placeholder="password"><br>
         <input type="submit">
 
     </form>
+<h2>Registeration Form</h2>
     
 </body>
 </html>

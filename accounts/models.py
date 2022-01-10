@@ -13,3 +13,12 @@ class Register(models.Model):
 class Login(models.Model):
     username=models.CharField(max_length=100,null=True,blank=True)
     password=models.TextField(null=True,blank=True)
+
+
+class Web(models.Model):
+    customername=models.CharField(max_length=100,null=True,blank=True)
+    age=models.IntegerField(null=True,blank=True)
+    Address=models.TextField(max_length=500,null=True,blank=True)
+    days=models.DateField(null=True,blank=True)
+    img=models.ImageField(upload_to='img',null=True,blank=True)
+    numdays=models.IntegerField(null=True,blank=True)

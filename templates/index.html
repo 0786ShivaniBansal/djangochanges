@@ -109,14 +109,22 @@
             </a>
             <ul class="navbar-nav d-flex justify-content-between">
                 <div class="d-flex flex-lg-row flex-column">
+                    {% if user.is_authenticated %}
+                    <li>Hello</li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href= 'accounts/logout'>logout</a>
+                        
+                    </li>
+                    {% else %}
                     <li class="nav-item active">
                         <a class="nav-link" href= 'accounts/register'>register</a>
-                        <img src= "{{reg5.img.url}}"alt="">
+            
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href= 'accounts/login'>login</a>
                         
                     </li>
+                    {% endif %}
                 </div>
                 <li class="nav-item">
                     <a id="side-search-open" class="nav-link" href={% static '#' %}>
