@@ -35,6 +35,9 @@ def logout(request):
     return redirect('/')
 
 
+def index(request):
+    return render(request,('index.html'))
+
 def web(request):
     if(request.method=='POST'):
             print(request.POST)
@@ -42,6 +45,6 @@ def web(request):
             w.img='shivani.jpg'
             return redirect('/register')
 
-    return render(request,('web.html'))
+    return render(request,('accounts/web.html'))
 
 
