@@ -20,5 +20,5 @@ class Web(models.Model):
     age=models.IntegerField(null=True,blank=True)
     Address=models.TextField(max_length=500,null=True,blank=True)
     days=models.DateField(null=True,blank=True)
-    img=models.ImageField(upload_to='img',null=True,blank=True)
+    img=models.ImageField(upload_to='shivani.jpeg',null=True,blank=True)
     numdays=models.IntegerField(null=True,blank=True)
