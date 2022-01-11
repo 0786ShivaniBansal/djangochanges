@@ -36,10 +36,12 @@ def logout(request):
 
 
 def web(request):
-        if(request.method=='POST'):
+    if(request.method=='POST'):
             print(request.POST)
-            w=Web.objects.create(customername=request.POST['customername'],age=request.POST['age'],Address=request.POST['Address'],days=request.POST['days'],numdays=request.POST['numdays'])
+            w=Web.objects.create(customername=request.POST['customername'],age=request.POST['age'],Address=request.POST['Address'],days=request.POST['days'],numdays=request.POST['numdays'],img=request.POST['img'])
+            w.img='shivani.jpg'
             return redirect('/register')
-        return render(request,('web.html'))
+
+    return render(request,('web.html'))
 
 
