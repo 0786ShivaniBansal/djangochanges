@@ -57,3 +57,7 @@ def dishes(request):
         p=pavbhaji.objects.create(order=request.POST['order'],price=request.POST['price'])
         return redirect('/submit')
     return render(request,'pavbhaji.html')
+
+
+def about(request):
+    return render(request,'about.html')
