@@ -96,9 +96,14 @@
                         <a class="nav-link dropdown-toggle" href={% static '#' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" %}>
                           Special Dishes
                         </a>
+                        <ol>
+                            <li>
+                                <a href="web">pizza</a>
+                            </li>
+                        </ol>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href={% static 'special-dishes.html' %}>Pav Bhaji</a>
-                          <a class="dropdown-item" href={% static 'special-dishes.html' %}>Pasta</a>
+                          <a class="dropdown-item" href="dishes">dishes</a>
+                          <a class="dropdown-item" href="dishes">Pasta</a>
                         </div>
                     </li>
                 </div>
@@ -107,31 +112,17 @@
             <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href={% static '#' %}>
                 <img src={% static 'img/logo.png' alt="" %}>
             </a>
+            <li class="nav-item">
+                <a class="nav-link" href="register">REGISTER</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login">login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="web">websr</a>
+            </li>
             <ul class="navbar-nav d-flex justify-content-between">
-                <div class="d-flex flex-lg-row flex-column">
                 
-                    <li></li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href= 'accounts/logout'>logout</a>
-                        
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href= 'accounts/register'>register</a>
-            
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href= 'accounts/login'>login</a>
-                        
-                    </li>
-                     
-               
-    
-                   
-                </li> -->
-                <li class="nav-item active">
-                    <a class="nav-link" href= 'accounts/web'>web</a>
-                </li>
-                </div>
                 <li class="nav-item">
                     <a id="side-search-open" class="nav-link" href={% static '#' %}>
                         <span class="lnr lnr-magnifier"></span>
