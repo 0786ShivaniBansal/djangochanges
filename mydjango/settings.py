@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'hello',
     'shivani',
     'accounts',
+    'assignment',
 ]
 
 MIDDLEWARE = [
