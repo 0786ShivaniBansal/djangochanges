@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterApp</title>
+</head>
+<h1><b>REGISTERATION FORM</b></h1>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="Name" placeholder="username"><br>
+        <input type="text" name="email" placeholder="Enter Email"><br>
+        <input type="text" name="DOB" placeholder="Enter DOB"><br>
+        <input type="text" name="phoneNumber" placeholder="Enter phoneNumber"><br>
+        <input type="submit"><br>
+
+
+    </form>
+</body>
+</html>

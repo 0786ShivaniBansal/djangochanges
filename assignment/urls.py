@@ -1,8 +1,9 @@
-from django import views
-from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
+from .import views
 
 urlpatterns=[
-    path('',views.ass,name='ass'),
+    path('',views. register ,name='reg'),
+    path('log',views.login ,name='log'),
+    path('sub',views.sub,name='sub')
     
 ]
