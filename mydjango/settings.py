@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'shivani',
     'accounts',
     'assignment',
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
