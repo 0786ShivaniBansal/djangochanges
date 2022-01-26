@@ -14,12 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import imp
+from charset_normalizer import api
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from accounts.api import regapi
+from hello.api1 import apiuser
 
 urlpatterns=[
     path('',include('accounts.urls')),
+    path('hello',include('hello.urls')),
+    re_path(r'^api/regapi/$',regapi.as_view(),name='regapi'),
+    re_path(r'^api1/apiuser/$',apiuser.as_view(),name='apiuser'),
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

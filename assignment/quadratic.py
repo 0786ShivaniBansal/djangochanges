@@ -1,7 +1,8 @@
-import numpy as np
+# import numpy as np
 
-def find_roots(a, b, c):
-    input = [a, b, c]
-    return tuple(np.roots(input))
+# def find_roots(a, b, c):
+#     input = [a, b, c]
+#     return tuple(np.roots(input))
 
-print(find_roots(2, 10, 8));
+# print(find_roots(2, 10, 8));
+
