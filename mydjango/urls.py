@@ -27,6 +27,9 @@ urlpatterns=[
     path('',include('accounts.urls')),
     path('hello',include('hello.urls')),
     re_path(r'^api/regapi/$',regapi.as_view(),name='regapi'),
+   
     re_path(r'^api1/apiuser/$',apiuser.as_view(),name='apiuser'),
+    # re_path(r'^api1/userdetails/$',userdetails.as_view(),name='userdetails'),
+    re_path(r'^api1/apiuser/(?P<idname>\d+)/$',apiuser.as_view(),name='apiuser'),
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

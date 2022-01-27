@@ -6,6 +6,7 @@ from . serailizer1 import *
 from hello import serailizer1
 from rest_framework import status
 
+
 class apiuser(APIView):
     def get(self,request):
         model=User.objects.all()
@@ -19,3 +20,11 @@ class apiuser(APIView):
         if serializer1.is_valid():
             return response(serializer1.data,status=status.HTTP_201_CREATED)
         return response(serializer1.errors,status=status.HTTP_400_BAD_REQUEST)
+
+
+class apiuser(APIView):
+    def get(self,request,idname):
+        model=User.objects.get(idname=idname)
+        serializer1=userserializer(model)
+        return Response(serializer1.data)
+    
