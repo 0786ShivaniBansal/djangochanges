@@ -22,8 +22,3 @@ def user(request):
         print(request.POST)
     u=User.objects.create(idname=request.POST['idname'],firstname=request.POST['firstname'],lastname=request.POST['lastname'],companyname=request.POST['companyname'],age=request.POST['age'],city=request.POST['city'],state=request.POST['state'],zip=request.POST['zip'],email=request.POST['email'],web=request.POST['web'])
     return render(request,'user.html')
-
-
-# def userdetails(request):
-    
-#     return render(request,'user.html')

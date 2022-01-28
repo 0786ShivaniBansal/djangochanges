@@ -8,6 +8,6 @@ from hello . models import User
 class userserializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['idname'] 
+        fields='__all__'
     
 

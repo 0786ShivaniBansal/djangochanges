@@ -21,7 +21,7 @@ from django.urls import path,include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from accounts.api import regapi
-from hello.api1 import apiuser
+from hello.api1 import apiuser,userdetails
 
 urlpatterns=[
     path('',include('accounts.urls')),
@@ -29,7 +29,6 @@ urlpatterns=[
     re_path(r'^api/regapi/$',regapi.as_view(),name='regapi'),
    
     re_path(r'^api1/apiuser/$',apiuser.as_view(),name='apiuser'),
-    # re_path(r'^api1/userdetails/$',userdetails.as_view(),name='userdetails'),
-    re_path(r'^api1/apiuser/(?P<idname>\d+)/$',apiuser.as_view(),name='apiuser'),
+    re_path(r'^api1/apiuser/(?P<idname>\d+)/$',userdetails.as_view(),name='apiuser'),
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

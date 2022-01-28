@@ -22,9 +22,24 @@ class apiuser(APIView):
         return response(serializer1.errors,status=status.HTTP_400_BAD_REQUEST)
 
 
-class apiuser(APIView):
+class userdetails(APIView):
     def get(self,request,idname):
+        try:
+            model=User.objects.get(idname=idname)
+        except User.DoesNotExist:
+            return Response("user not found",status=status.HTTP_400_BAD_REQUEST)
+        serailizer1=userserializer(model)
+        return Response(serailizer1.data,status=status.HTTP_200_OK)
+        
+
+
+    def put(self,request,idname):
         model=User.objects.get(idname=idname)
-        serializer1=userserializer(model)
-        return Response(serializer1.data)
+        serializer1=userserializer(data=request.data)
+        if serializer1.is_valid():
+            return response(serializer1.data,status=status.HTTP_201_CREATED)
+        return response(serializer1.errors,status=status.HTTP_400_BAD_REQUEST)
+
+
+
     
