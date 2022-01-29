@@ -23,23 +23,29 @@ class apiuser(APIView):
 
 
 class userdetails(APIView):
-    def get(self,request,idname):
+
+    def get_User(self,idname):
         try:
             model=User.objects.get(idname=idname)
-        except User.DoesNotExist:
-            return Response("user not found",status=status.HTTP_400_BAD_REQUEST)
-        serailizer1=userserializer(model)
-        return Response(serailizer1.data,status=status.HTTP_200_OK)
+            return model
+        except:
+            return Response("user not found ")
+    def get(self,request,idname):
+         serailizer1=userserializer(self.get_User(idname))
+         return Response(serailizer1.data,status=status.HTTP_200_OK)
         
 
 
     def put(self,request,idname):
-        model=User.objects.get(idname=idname)
-        serializer1=userserializer(data=request.data)
+        serializer1=userserializer(self.get_User(idname),data=request.data)
         if serializer1.is_valid():
-            return response(serializer1.data,status=status.HTTP_201_CREATED)
-        return response(serializer1.errors,status=status.HTTP_400_BAD_REQUEST)
+            serailizer1.save()
+            return Response(serializer1.data,status=status.HTTP_201_CREATED)
+        return Response(serializer1.errors,status=status.HTTP_400_BAD_REQUEST)
 
 
-
+    def delete(self,request,idname):
+        model=self.get_User(idname)
+        model.delete
+        return Response(status=status.HTTP_204_NO_CONTENT)
     
